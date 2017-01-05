@@ -11,7 +11,7 @@ Once you have a CI system that rejects any unsigned commits, you avoid an
 attacker with git access being able to explore or execute code on these systems
 at all.
 
-## Unambiguous Authorship
+### Unambiguous Authorship
 
 Short of enforced signing, anyone can commit with the email of anyone else. A 
 typical VCS like Git has no way to protect against this.
