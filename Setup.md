@@ -71,8 +71,8 @@ The following will enable security features on the Yubikey that are only relevan
 
 ### Yubikey Neo / Yubikey Neo-n
 
-```
 Enable GPG mode:
+```
 $ ykpersonalize -m86
 Firmware version 3.4.2 Touch level 1541 Program sequence 1
 
