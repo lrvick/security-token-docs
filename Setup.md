@@ -33,8 +33,7 @@ C:\> pip install --user yubioath-desktop
 
 ```
 $ pacman -S gpg yubikey-personalization pcsc-tools pcsclite libusb-compat libu2f-host swig gcc python2-pyside python2-click
-$ sudo systemctl enable pcscd.service
-$ sudo systemctl start pcscd.service 
+$ sudo systemctl enable --now pcscd.service
 $ pip install --user yubioath-desktop
 ```
 
