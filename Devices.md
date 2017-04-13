@@ -72,7 +72,7 @@ See: [https://www.nitrokey.com/]
 
 The VivoKey is an NFC-only device designed to cover the bulk of use cases of the YubiKey Neo while also having space for general user-supplied applications such as transit pass emulation via the Fidesmo platform. It is Paralyne-C coated and on a flexible PCB intended for implantation and is currently in human trials.
 
-For people who are not as into scapels, it would of course be possible to insert such a device into a watch band or bracelet.
+For people who are not as into scalpels, it would of course be possible to insert such a device into a watch band or bracelet.
 
 ![VivoKey](assets/img/vivokey.png)
 

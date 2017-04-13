@@ -39,7 +39,7 @@ every line of code between releases on the individual cutting a release. In a
 large codebase this is an unreasonable expectation.
 
 Having signing and review at every PR between releases distributes
-responsibility more fairly. When you sign a commit or sign a mege commit after
+responsibility more fairly. When you sign a commit or sign a merge commit after
 a PR you are signing only that one chunk of code or subset of changes and
 creating a smaller set of checks and balances through the release cycle.
 
