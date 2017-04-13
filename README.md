@@ -4,7 +4,7 @@ Security tokens are small hardware devices one uses to prove physical access to 
 
 While adding the requirement of having to physically insert or touch a device to a username and password may seem simple, it is something one can not do remotely. This makes it a highly effective and simple way to greatly limit damage and data theft from remote attackers.
 
-If you don't yet have a device learn about your options in [Devices](Devices.md).
+If you don't yet have a device, learn about your options in [Devices](Devices.md).
 
 If you have not yet set up your device see [Setup](Setup.md).
 
