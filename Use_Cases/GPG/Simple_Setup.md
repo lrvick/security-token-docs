@@ -2,9 +2,9 @@
 
 These steps are the simplest way to initialize a Security Token for GPG however If you lose the key or forget the PIN, you will not be able to recover it!
 
-This is only recommended where you universally have administrators or peers capable of revoking and rotating all of your credentials if nessesary.
+This is only recommended where you universally have administrators or peers capable of revoking and rotating all of your credentials if necessary.
 
-If you are wanting to setup a GPG on a Security Token for mixed or personal use, or are an administator it is recommended to use the Advanced Setup which will allow you an opprotunity to make a secure offline backup of key data.
+If you are wanting to setup a GPG on a Security Token for mixed or personal use, or are an administrator it is recommended to use the Advanced Setup which will allow you an opportunity to make a secure offline backup of key data.
 
 ## Configure PIN codes
 

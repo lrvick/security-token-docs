@@ -2,9 +2,9 @@
 
 ## Configure SSH to use your Security Token
 
-This assumes you already have a Security Token configured with a GPG Authentication Subkey.
+This assumes you already have a Security Token configured with a GPG Authentication subkey.
 
-The end result will be that you distribute the SSH Public Key from your Security Token to all VCS systems and servers you normally connect to via SSH. From there you will need to have your key insert it, and tap it once for every connection. You will also be required to tap the key for all SSH Agent forwarding hops removing many of the security issues with traditiional ssh agent forwarding on shared systems.
+The end result will be that you distribute the SSH Public Key from your Security Token to all VCS systems and servers you normally connect to via SSH. From there you will need to have your key insert it, and tap it once for every connection. You will also be required to tap the key for all SSH Agent forwarding hops removing many of the security issues with traditional ssh agent forwarding on shared systems.
 
 ### Configure gpg-agent to also behave as an ssh-agent:
 

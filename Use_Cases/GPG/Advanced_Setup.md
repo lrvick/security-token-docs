@@ -8,7 +8,7 @@ You should ideally perform these steps from an "airgapped" system, such as from
 a Linux Live-CD not connected to the internet.
 
 Unlike the "Simple Setup" steps, this will result in your Master key being
-offline and only Subkeys will exist on the Security Token. This will mean your
+offline and only subkeys will exist on the Security Token. This will mean your
 Security Token will lack the Certify permission, meaning it will not be able to
 sign other GPG keychains.
 
@@ -19,7 +19,7 @@ of other people.
 ## Prepare Offline Storage Directory
 
 This directory needs to be kept on an offline device (USB drive, etc) in a
-stable location (Fireproof box, safe, under your matress, etc)
+stable location (Fireproof box, safe, under your mattress, etc)
 
 This will contain:
  * Backup plaintext secret keys, useful for emergencies
@@ -122,7 +122,7 @@ revocation, and further manipulation of your key (and its subkeys).
 
 When the Security Token is set up you likely won't need this password for daily
 operation but it should be maintained in your brain. You could also store only
-part of the password in memory, and a long complex part in a usb drive in a 
+part of the password in memory, and a long complex part in a USB drive in a 
 secure location.
 
 ```
@@ -694,7 +694,7 @@ gpg> save
 The following is critical to ensure no private keys are left on disk, and that
 you are in fact are only relying on the private keys in your Security Token.
 
-If you heeded the advice in this document of working from a LiveCD this still
+If you heeded the advice in this document of working from a Live CD this still
 serves as a good test.
 
 We opt for a "clean room" approach here to ensure you could use your key as
