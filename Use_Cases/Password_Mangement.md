@@ -13,6 +13,7 @@ encryption/signing/2FA, and those that do not.
 | Encryptr	     |  X	 |  	 	|     |     	 	 |         |      |  X 	|    X 	  |  X 	|  X	|   X   | Free  |
 | KeePass	       |  X	 |  	  |     |     	   |    X	   |  X	  |  X	|    X	  |  X	|  X	|   X	  | Free  |
 | KeePassX       |  X	 |  	  |     |     	 	 |         |  X	 	|     |         |  X	|  X	|   X	  | Free  |
+| KeePassXC      |  X	 |  	  |     |     	 	 |    X    |  X	 	|     |         |  X	|  X	|   X	  | Free  |
 | Password Safe	 |  X	 |  	  |     |     	   |    X	 	 |      |  X	|         |   	|  X	|   X	  | Free  |
 | Password BOX   |     |  	  |     |     	 	 | 	 	     |      |  X	|    X	  |  X	|  X	|       | Free  |
 | Pwsafe	 	     |     |  	  |     |     	   |    X	 	 |      |  X	|         |  X	| 	 	|       | Free  |
@@ -89,24 +90,24 @@ you choose.
 
 4. Set your first password
 
-  This will generate a random 50 character password, gpg encrypt it to your
-  key, and save it as ~/.password-store/Personal/gmail.gpg
+    This will generate a random 50 character password, gpg encrypt it to your
+    key, and save it as ~/.password-store/Personal/gmail.gpg
 
-  It will then make a commit on your behalf to the repo defined at
-  ~/.password-store/.
+    It will then make a commit on your behalf to the repo defined at
+    ~/.password-store/.
 
-  Your Security Token should ideally begin blinking so you can touch an approve
-  it signing the commit for you.
+    Your Security Token should ideally begin blinking so you can touch an approve
+    it signing the commit for you.
 
-  ```
-  pass generate Personal/gmail 50
-  ```
+    ```
+    pass generate Personal/gmail 50
+    ```
 
 5. Sync to Git Remote
 
-  ```
-  pass git push
-  ```
+    ```
+    pass git push
+    ```
 
 ### Pass Integrations
 
@@ -131,3 +132,10 @@ Supports NFC or USB OTG Security Tokens via OpenKeychain.
 
 OpenKeychain: https://f-droid.org/repository/browse/?fdfilter=Password&fdid=com.zeapo.pwdstore&fdpage=2
 Android Password Store: https://f-droid.org/repository/browse/?fdfilter=Password&fdid=com.zeapo.pwdstore&fdpage=2
+
+#### Passforios
+
+Provides a GUI for iOS that can add/remove/modify/sync passwords against
+your remote Git repo.
+
+Passforios: https://mssun.github.io/passforios/
