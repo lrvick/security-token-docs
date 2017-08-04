@@ -7,28 +7,20 @@ Here we are specifically hilighting high level security/usability attributes of
 each, and specifically which have support for things like hardware token
 encryption/signing/2FA, and those that do not.
 
-Name	          OSS  Sig. WoT H/W  2FA Team iOS And. OSX  Win Lin. Cost
---------------  ---  ---  --- ---  --- ---- --- ---  ---  --- ---  -----
-Password Store   X    X	   X   X	  X   X	   X   X    X    X   X	 Free
-Encryptr	       X    	                     X   X    X    X   X   Free
-KeePass	         X    	            X   X	   X	 X    X    X   X	 Free
-KeePassX         X    	                X	            X    X   X	 Free
-KeePassXC        X    	            X   X	            X    X   X	 Free
-Password Safe	   X    	            X        X	           X   X	 Free
-Password BOX          	            	       X	 X    X    X       Free
-Pwsafe	 	            	            X        X	      X  	         Free
-Dashlane	 	          	                X    X   X    X    X    	 Free
-Passpack	 	          	            X   X    X   X    X    X    	 $48/y
-1Password	 	          	                X	   X	 X    X    X       $50
-LastPass	 	   	      	                X	   X	 X    X    X   X	 $12/y
-
-| OSS      | Open Source Software
-| Sig.     | Cryptographic Signing
-| WoT      | Web of Trust
-| H/W Enc. | Hardware Encryption
-| H/W 2FA  | Hardware Two Factor Authentication
-| WoT      | Web of Trust
-
+Name	         | OSS | Sig. | WoT | HSM | 2FA | Team | iOS | And. | OSX | Win | Lin. | Cost
+-------------- | --- | ---  | --- | --- | --- | ---- | --- | ---  | --- | --- | ---  | -----
+Password Store |  X  |  X	  |  X  |  X	|  X  |  X	 |  X  |  X   |  X  |  X  |  X	 | Free
+Encryptr	     |  X  |  	  |     |     |     |      |  X  |  X   |  X  |  X  |  X   | Free
+KeePass	       |  X  |  	  |     |     |  X  |  X	 |  X	 |  X   |  X  |  X  |  X	 | Free
+KeePassX       |  X  |  	  |     |     |     |  X	 |     |      |  X  |  X  |  X	 | Free
+KeePassXC      |  X  |  	  |     |     |  X  |  X	 |     |      |  X  |  X  |  X	 | Free
+Password Safe	 |  X  |  	  |     |     |  X  |      |  X	 |      |     |  X  |  X	 | Free
+Password BOX   |     |  	  |     |     |  	  |      |  X	 |  X   |  X  |  X  |      | Free
+Pwsafe	 	     |     |  	  |     |     |  X  |      |  X	 |      |  X  |	    |      | Free
+Dashlane	 	   |     |  	  |     |     |     |  X   |  X  |  X   |  X  |  X  |   	 | Free
+Passpack	 	   |     |  	  |     |     |  X  |  X   |  X  |  X   |  X  |  X  |   	 | $48/y
+1Password	 	   |     |  	  |     |     |     |  X	 |  X	 |  X   |  X  |  X  |      | $50
+LastPass	 	   |	   |   	  |     |     |     |  X	 |  X	 |  X   |  X  |  X  |  X	 | $12/y
 
 ## What should I use?
 
