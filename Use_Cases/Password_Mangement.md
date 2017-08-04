@@ -9,7 +9,7 @@ encryption/signing/2FA, and those that do not.
 
 | Name	         |OSS|Sig.|WoT|H/W |H/W|Team|iOS|And.|OSX|Win|Lin.| Cost  |
 |                |   |    |   |Enc.|2FA|    |   |    |   |   |    |       |
-|----------------|---|----|---|----|---|----|---|----|---|---|----|-------|
+| -------------- | - | -- | - | -- | - | -- | - | -- | - | - | -- | ----- |
 | Password Store | X | X	| X	| X	 | X | X	| X |  X | X | X | X	| Free  |
 | Encryptr	     | X | 	 	|   |    |   |    | X |  X | X | X | X  | Free  |
 | KeePass	       | X | 	  |   |    | X | X	| X	|  X | X | X | X	| Free  |
