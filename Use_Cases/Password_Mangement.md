@@ -7,20 +7,20 @@ Here we are specifically hilighting high level security/usability attributes of
 each, and specifically which have support for things like hardware token
 encryption/signing/2FA, and those that do not.
 
-Name	         | OSS | Sig.| WoT | HSM | 2FA | Team | iOS | And. | OSX | Win | Lin. | Cost
-:--------------|:---:|:---:|:---:|:---:|:---:|:----:|:---:|:----:|:---:|:---:|:----:|:-----:
-Password Store |  X  |  X	 |  X  |  X	 |  X  |  X	  |  X  |  X   |  X  |  X  |  X	  | Free
-Encryptr	     |  X  |  	 |     |     |     |      |  X  |  X   |  X  |  X  |  X   | Free
-KeePass	       |  X  |  	 |     |     |  X  |  X	  |  X	|  X   |  X  |  X  |  X	  | Free
-KeePassX       |  X  |  	 |     |     |     |  X	  |     |      |  X  |  X  |  X	  | Free
-KeePassXC      |  X  |  	 |     |     |  X  |  X	  |     |      |  X  |  X  |  X	  | Free
-Password Safe	 |  X  |  	 |     |     |  X  |      |  X	|      |     |  X  |  X	  | Free
-Password BOX   |     |  	 |     |     |  	 |      |  X	|  X   |  X  |  X  |      | Free
-Pwsafe	 	     |     |  	 |     |     |  X  |      |  X	|      |  X  |	  |       | Free
-Dashlane	 	   |     |  	 |     |     |     |  X   |  X  |  X   |  X  |  X  |   	  | Free
-Passpack	 	   |     |  	 |     |     |  X  |  X   |  X  |  X   |  X  |  X  |   	  | $48/y
-1Password	 	   |     |  	 |     |     |     |  X	  |  X	|  X   |  X  |  X  |      | $50
-LastPass	 	   |	   |   	 |     |     |     |  X	  |  X	|  X   |  X  |  X  |  X	  | $12/y
+Name	         | OSS | Sig.| WoT | HSM | 2FA | Team | iOS | And.| OSX | Win | Lin.| Cost
+:--------------|:---:|:---:|:---:|:---:|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:----:
+Password Store |  X  |  X	 |  X  |  X	 |  X  |  X	  |  X  |  X  |  X  |  X  |  X	| Free
+Encryptr	     |  X  |  	 |     |     |     |      |  X  |  X  |  X  |  X  |  X  | Free
+KeePass	       |  X  |  	 |     |     |  X  |  X	  |  X	|  X  |  X  |  X  |  X	| Free
+KeePassX       |  X  |  	 |     |     |     |  X	  |     |     |  X  |  X  |  X	| Free
+KeePassXC      |  X  |  	 |     |     |  X  |  X	  |     |     |  X  |  X  |  X	| Free
+Password Safe	 |  X  |  	 |     |     |  X  |      |  X	|     |     |  X  |  X	| Free
+Password BOX   |     |  	 |     |     |  	 |      |  X	|  X  |  X  |  X  |     | Free
+Pwsafe	 	     |     |  	 |     |     |  X  |      |  X	|     |  X  |	    |     | Free
+Dashlane	 	   |     |  	 |     |     |     |  X   |  X  |  X  |  X  |  X  |   	| Free
+Passpack	 	   |     |  	 |     |     |  X  |  X   |  X  |  X  |  X  |  X  |   	| $48/y
+1Password	 	   |     |  	 |     |     |     |  X	  |  X	|  X  |  X  |  X  |     | $50
+LastPass	 	   |	   |   	 |     |     |     |  X	  |  X	|  X  |  X  |  X  |  X	| $12/y
 
 ## What should I use?
 
@@ -121,7 +121,9 @@ maintained and audited by governments and the open source community since 1999.
 ### Pass Integrations
 
 #### QTPass
+
 Graphical user interface for pass that supports Linux, BSD, OSX, and Windows
+
 Website:  https://qtpass.org/
 
 #### Passmenu
@@ -131,6 +133,8 @@ emulation via xdotool to auto-type passwords on demand.
 
 This allows a sweet spot of ease of use without relying on the system
 clipboard or complex browser plugins that introduce additional attack surface.
+
+Ships with "pass" package on most unix/linux distributions.
 
 #### Android Password Store
 
@@ -147,4 +151,4 @@ Android Password Store: https://f-droid.org/repository/browse/?fdfilter=Password
 Provides a GUI for iOS that can add/remove/modify/sync passwords against
 your remote Git repo.
 
-Passforios: https://mssun.github.io/passforios/
+Website: https://mssun.github.io/passforios/
