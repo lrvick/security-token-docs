@@ -40,17 +40,26 @@ technical capability of yourself or users you support into consideration.
 
 With those disclaimers out of the way, the reason Password Store supports
 everything is that both the CLI tools and GUIs like Android Password Store and
-QTPass all share a very simple common understanding of how password managers
-should be stored and interacted with under the hood. A Password Store
-repository is just GPG encrypted text files in a folder. Optionally "pass"
-tools all support that folder being managed via Git, and can wrap git commands
-and sync for you. This allows for a very simple and easy to reason about
-strategy, that does not require a tool at all. If you GPG encrypt a text file
-and put it in a folder, Pass will consider it to be a valid password store.
+QTPass all share a very simple common understanding of how passwords should be
+encrypted, stored and interacted with under the hood.
 
-The source code of pass is very small and easy to audit however you can always
-manually decrypt pass with just GPG as you like to integrate with any tooling
-you choose.
+A Password Store repository is just GPG encrypted text files in a folder.
+Optionally "pass" tools all support that folder being managed via Git, and can
+wrap git commands and sync for you. This allows for a very simple and easy to
+reason about password management strategy, that does not require any
+specialized tools except for convenience.
+
+If you GPG encrypt a text file and put it in a folder, any "Pass" compatible
+program will consider that folder to be a valid password store.
+
+The source code of the reference CLI implementation of pass is nothing but
+a simple bash script that wraps gpg and git commands making it easy to audit
+and trust. You can however always manually decrypt pass with just GPG as you
+like to integrate with any tooling you need.
+
+There is always a new flavor of the week when it comes to password managers
+however gpg makes for a very simple and predictable backend that has been
+maintained and audited by governments and the open source community since 1999.
 
 ## Pass Setup
 
