@@ -4,14 +4,14 @@
 
 This assumes you already have a Security Token configured with a GPG Authentication subkey.
 
-The end result will be that you distribute the SSH Public Key from your Security Token to all VCS systems and servers you normally connect to via SSH. From there you will need to have your key insert it, and tap it once for every connection. You will also be required to tap the key for all SSH Agent forwarding hops removing many of the security issues with traditional ssh agent forwarding on shared systems.
+The end result will be that you distribute the SSH Public Key from your Security Token to all VCS systems and servers you normally connect to via SSH. From there you will need to have your key inserted, and tap it once for every connection. You will also be required to tap the key for all SSH Agent forwarding hops removing many of the security issues with traditional ssh agent forwarding on shared systems.
 
 ### Configure gpg-agent to also behave as an ssh-agent:
 
 ```
 echo >~/.gnupg/gpg-agent.conf <<HERE
 enable-ssh-support
-keep-display # helps avoid 
+keep-display # helps avoid issues with pinentry
 HERE
 ```
 
@@ -61,7 +61,7 @@ if [ ! -z "$SSH_TTY" ]; then
     #     RemoteForward /home/user/.gnupg/S.gpg-agent.ssh /home/user/.gnupg/S.gpg-agent
     if [ -e $HOME/.gnupg/S.gpg-agent.ssh ]; then
         mv $HOME/.gnupg/S.gpg-agent{.ssh,}
-    elif [ -e "/var/run/user/$(id -u)/gnupg/S.gpg-agent" ]; then
+    elif [ -e "/var/run/user/$(id -u)/gnupg/S.gpg-agent.ssh" ]; then
         mv /var/run/user/$(id -u)/gnupg/S.gpg-agent{.ssh,}
     fi
 
