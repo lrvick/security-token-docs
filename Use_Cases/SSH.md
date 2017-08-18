@@ -1,24 +1,72 @@
 # SSH
 
-## Configure SSH to use your Security Token
+There are a number of different methods for using SSH with a yubikey. Most
+of them however require either proprietary components, or modifications to
+servers. Such methods are broken and should not be promoted.
+
+Here we will cover only methods that use standard tools, standard protocols,
+and don't allow secret keys to come in contact with system memoy.
+
+Secondly solutions here do not require any server modifications. This is key
+because you will not be able to modify all systems you use that provide ssh
+interfaces such as Github ssh push.
+
+## PKCS11
+
+With this interface it is possible to generate an ssh private key in a
+particular format that can be stored inside a PKCS11 capable device such
+as a Yubikey 4.
+
+While this does not offer nearly as many assurances as the GPG setup detailed
+below, it is the simplest to setup.
+
+Note: Due to limitations in the PKCS11 spec, it is not possible to generate
+keys stronger than 2048 bit RSA with this method. Consider the security
+requirements of your organization before using this method.
+
+### Generation
+
+For a set of manual steps on how to set this up see:
+
+[https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html]
+
+To simplify this process consider the following script:
+
+[https://gist.github.com/lrvick/9e9c4641fab07f0b8dde6419f968559f]
+
+### Usage
+
+Since SSH will by default only scan folders such as ~/.ssh/ for keys
+you will need to inform it that you wish it to also check for smartcards via
+the OpenSC interface.
+
+Before using ssh commands be sure you have started your ssh agent like so:
+
+```
+ssh-add -s $OPENSC_LIBS/opensc-pkcs11.so
+```
+
+## GPG
+
+### Configure SSH to use your Security Token
 
 This assumes you already have a Security Token configured with a GPG Authentication subkey.
 
 The end result will be that you distribute the SSH Public Key from your Security Token to all VCS systems and servers you normally connect to via SSH. From there you will need to have your key insert it, and tap it once for every connection. You will also be required to tap the key for all SSH Agent forwarding hops removing many of the security issues with traditional ssh agent forwarding on shared systems.
 
-### Configure gpg-agent to also behave as an ssh-agent:
+#### Configure gpg-agent to also behave as an ssh-agent:
 
 ```
 echo >~/.gnupg/gpg-agent.conf <<HERE
 enable-ssh-support
-keep-display # helps avoid 
+keep-display # Avoid issues when not using graphical login managers
 HERE
 ```
 
 Additionally if you are using OSX you will want to set a custom program for pin entry:
 
 ```
-echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf 
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 ```
 
 Edit your ~/.bash_profile (or similar) and add the following lines to use gpg-agent (and thus the Security Token) as your SSH key daemon:
@@ -44,7 +92,7 @@ if [ -z "$SSH_TTY" ]; then
     eval "$(cat "$envfile")" && export SSH_AUTH_SOCK
 
     # Wake up smartcard to avoid races
-    gpg --card-status > /dev/null 2>&1 
+    gpg --card-status > /dev/null 2>&1
 
 fi
 
@@ -52,7 +100,7 @@ fi
 if [ ! -z "$SSH_TTY" ]; then
     # Copy gpg-socket forwarded from ssh to default location
     # This allows local gpg to be used on the remote system transparently.
-    # Strongly discouraged unless GPG managed with a touch-activated GPG 
+    # Strongly discouraged unless GPG managed with a touch-activated GPG
     # smartcard such as a Yubikey 4.
     # Also assumes local .ssh/config contains host block similar to:
     # Host someserver.com
@@ -84,7 +132,7 @@ $ killall gpg-agent
 $ source ~/.bash_profile
 ```
 
-## Get SSH Public Key
+### Get SSH Public Key
 
 You (or anyone that has your GPG public key) can get your SSH key as follows:
 
