@@ -7,19 +7,20 @@ Here we are specifically hilighting high level security/usability attributes of
 each, and specifically which have support for things like hardware token
 encryption/signing/2FA, and those that do not.
 
-| Name	         | OSS | Sig. | WoT | H/W Enc. | H/W 2FA | Team | iOS | Android | OSX | Win | Linux | Cost  |
-| -------------- | --- | ---- | --- | -------- | ------- | ---- | --- | ------- | --- | --- | ----- | ----  |
-| Password Store | 	X	 |  X	  |  X	|    X	   |    X    |  X	  |  X  |    X	 	|  X	|  X	|   X	  | Free  |
-| Encryptr	     |  X	 |  	 	|     |     	 	 |         |      |  X 	|    X 	  |  X 	|  X	|   X   | Free  |
-| KeePass	       |  X	 |  	  |     |     	   |    X	   |  X	  |  X	|    X	  |  X	|  X	|   X	  | Free  |
-| KeePassX       |  X	 |  	  |     |     	 	 |         |  X	 	|     |         |  X	|  X	|   X	  | Free  |
-| Password Safe	 |  X	 |  	  |     |     	   |    X	 	 |      |  X	|         |   	|  X	|   X	  | Free  |
-| Password BOX   |     |  	  |     |     	 	 | 	 	     |      |  X	|    X	  |  X	|  X	|       | Free  |
-| Pwsafe	 	     |     |  	  |     |     	   |    X	 	 |      |  X	|         |  X	| 	 	|       | Free  |
-| Dashlane	 	   |     |  	  |     |     	 	 |         |  X   |  X  |    X    |  X	|  X  | 	 	 	| Free  |
-| Passpack	 	   |     |  	  |     |     	 	 |    X    |  X   |  X  |    X    |  X	|  X 	| 	 	 	| $4+/m |
-| 1Password	 	   |     |  	  |     |     	 	 |         |  X	  |  X	|    X	  |  X	|  X	|       | $50   |
-| LastPass	 	   |	 	 |  	  |     |          |         |  X	  |  X	|    X	  |  X	|  X	|   X	  | $12/y |
+Name	         | OSS | Sig.| WoT | HSM | 2FA | Team | iOS | And.| OSX | Win | Lin.| Cost
+:--------------|:---:|:---:|:---:|:---:|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:----:
+Password Store |  X  |  X	 |  X  |  X	 |  X  |  X	  |  X  |  X  |  X  |  X  |  X	| Free
+Encryptr	     |  X  |  	 |     |     |     |      |  X  |  X  |  X  |  X  |  X  | Free
+KeePass	       |  X  |  	 |     |     |  X  |  X	  |  X	|  X  |  X  |  X  |  X	| Free
+KeePassX       |  X  |  	 |     |     |     |  X	  |     |     |  X  |  X  |  X	| Free
+KeePassXC      |  X  |  	 |     |     |  X  |  X	  |     |     |  X  |  X  |  X	| Free
+Password Safe	 |  X  |  	 |     |     |  X  |      |  X	|     |     |  X  |  X	| Free
+Password BOX   |     |  	 |     |     |  	 |      |  X	|  X  |  X  |  X  |     | Free
+Pwsafe	 	     |     |  	 |     |     |  X  |      |  X	|     |  X  |	    |     | Free
+Dashlane	 	   |     |  	 |     |     |     |  X   |  X  |  X  |  X  |  X  |   	| Free
+Passpack	 	   |     |  	 |     |     |  X  |  X   |  X  |  X  |  X  |  X  |   	| $48/y
+1Password	 	   |     |  	 |     |     |     |  X	  |  X	|  X  |  X  |  X  |     | $50
+LastPass	 	   |	   |   	 |     |     |     |  X	  |  X	|  X  |  X  |  X  |  X	| $12/y
 
 ## What should I use?
 
@@ -39,17 +40,26 @@ technical capability of yourself or users you support into consideration.
 
 With those disclaimers out of the way, the reason Password Store supports
 everything is that both the CLI tools and GUIs like Android Password Store and
-QTPass all share a very simple common understanding of how password managers
-should be stored and interacted with under the hood. A Password Store
-repository is just GPG encrypted text files in a folder. Optionally "pass"
-tools all support that folder being managed via Git, and can wrap git commands
-and sync for you. This allows for a very simple and easy to reason about
-strategy, that does not require a tool at all. If you GPG encrypt a text file
-and put it in a folder, Pass will consider it to be a valid password store.
+QTPass all share a very simple common understanding of how passwords should be
+encrypted, stored and interacted with under the hood.
 
-The source code of pass is very small and easy to audit however you can always
-manually decrypt pass with just GPG as you like to integrate with any tooling
-you choose.
+A Password Store repository is just GPG encrypted text files in a folder.
+Optionally "pass" tools all support that folder being managed via Git, and can
+wrap git commands and sync for you. This allows for a very simple and easy to
+reason about password management strategy, that does not require any
+specialized tools except for convenience.
+
+If you GPG encrypt a text file and put it in a folder, any "Pass" compatible
+program will consider that folder to be a valid password store.
+
+The source code of the reference CLI implementation of pass is nothing but
+a simple bash script that wraps gpg and git commands making it easy to audit
+and trust. You can however always manually decrypt pass with just GPG as you
+like to integrate with any tooling you need.
+
+There is always a new flavor of the week when it comes to password managers
+however gpg makes for a very simple and predictable backend that has been
+maintained and audited by governments and the open source community since 1999.
 
 ## Pass Setup
 
@@ -89,29 +99,31 @@ you choose.
 
 4. Set your first password
 
-  This will generate a random 50 character password, gpg encrypt it to your
-  key, and save it as ~/.password-store/Personal/gmail.gpg
+    This will generate a random 50 character password, gpg encrypt it to your
+    key, and save it as ~/.password-store/Personal/gmail.gpg
 
-  It will then make a commit on your behalf to the repo defined at
-  ~/.password-store/.
+    It will then make a commit on your behalf to the repo defined at
+    ~/.password-store/.
 
-  Your Security Token should ideally begin blinking so you can touch an approve
-  it signing the commit for you.
+    Your Security Token should ideally begin blinking so you can touch an approve
+    it signing the commit for you.
 
-  ```
-  pass generate Personal/gmail 50
-  ```
+    ```
+    pass generate Personal/gmail 50
+    ```
 
 5. Sync to Git Remote
 
-  ```
-  pass git push
-  ```
+    ```
+    pass git push
+    ```
 
 ### Pass Integrations
 
 #### QTPass
+
 Graphical user interface for pass that supports Linux, BSD, OSX, and Windows
+
 Website:  https://qtpass.org/
 
 #### Passmenu
@@ -122,6 +134,8 @@ emulation via xdotool to auto-type passwords on demand.
 This allows a sweet spot of ease of use without relying on the system
 clipboard or complex browser plugins that introduce additional attack surface.
 
+Ships with "pass" package on most unix/linux distributions.
+
 #### Android Password Store
 
 Provides a GUI for Android that can add/remove/modify/sync passwords against
@@ -131,3 +145,10 @@ Supports NFC or USB OTG Security Tokens via OpenKeychain.
 
 OpenKeychain: https://f-droid.org/repository/browse/?fdfilter=Password&fdid=com.zeapo.pwdstore&fdpage=2
 Android Password Store: https://f-droid.org/repository/browse/?fdfilter=Password&fdid=com.zeapo.pwdstore&fdpage=2
+
+#### Passforios
+
+Provides a GUI for iOS that can add/remove/modify/sync passwords against
+your remote Git repo.
+
+Website: https://mssun.github.io/passforios/
