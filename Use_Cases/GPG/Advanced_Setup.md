@@ -7,6 +7,8 @@ if you desire, or recover in the case of a lost/damaged key.
 You should ideally perform these steps from an "airgapped" system, such as from
 a Linux Live-CD not connected to the internet.
 
+One such Live-CD that has the needed tools is [Airgap](https://github.com/lrvick/airgap)
+
 Unlike the "Simple Setup" steps, this will result in your Master key being
 offline and only subkeys will exist on the Security Token. This will mean your
 Security Token will lack the Certify permission, meaning it will not be able to
@@ -63,7 +65,38 @@ Please select what kind of key you want:
    (4) RSA (sign only)
    (7) DSA (set your own capabilities)
    (8) RSA (set your own capabilities)
-Your selection? 4
+Your selection? 8
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? s
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? e
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? q
+
 ```
 
 Enter 4096 for key size. There are few good reasons to have a key size smaller
@@ -523,7 +556,7 @@ $ gpg -a --export-secret-keys B44C2E4A > /Media/UsbStick/pgp/B44C2E4A.master.asc
 $ gpg -a --export-secret-subkeys B44C2E4A > /Media/UsbStick/pgp/B44C2E4A.subkeys.asc
 $ gpg -a --export B44C2E4A > /Media/UsbStick/pgp/B44C2E4A.public.asc
 ```
- 
+
 ## Write Subkeys to Security Token
  
 This is a destructive operation as it will leave only non-secret "stubs" in
