@@ -1,4 +1,4 @@
-# Password Mangaement
+# Password Management
 
 There are a lot of password management solutions so here we will focus on the
 most common.
