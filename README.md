@@ -8,7 +8,7 @@ If you don't yet have a device, learn about your options in [Devices](Devices.md
 
 If you have not yet set up your device see [Setup](Setup.md).
 
-If you want to learn how to use your device, explore relevant [Use Cases](Use_Cases.md).
+If you want to learn how to use your device, explore relevant [Use Cases](Use_Cases).
 
 Common questions are covered in [Frequently Asked Questions](FAQs.md).
 
