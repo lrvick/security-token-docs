@@ -143,8 +143,8 @@ your remote Git repo.
 
 Supports NFC or USB OTG Security Tokens via OpenKeychain.
 
-OpenKeychain: https://f-droid.org/repository/browse/?fdfilter=Password&fdid=com.zeapo.pwdstore&fdpage=2
-Android Password Store: https://f-droid.org/repository/browse/?fdfilter=Password&fdid=com.zeapo.pwdstore&fdpage=2
+OpenKeychain: https://f-droid.org/packages/org.sufficientlysecure.keychain/  
+Android Password Store: https://f-droid.org/packages/com.zeapo.pwdstore/
 
 #### Passforios
 
