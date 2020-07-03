@@ -19,7 +19,7 @@ Password BOX   |     |  	 |     |     |  	 |      |  X	|  X  |  X  |  X  |     |
 Pwsafe	 	     |     |  	 |     |     |  X  |      |  X	|     |  X  |	    |     | Free
 Dashlane	 	   |     |  	 |     |     |     |  X   |  X  |  X  |  X  |  X  |   	| Free
 Passpack	 	   |     |  	 |     |     |  X  |  X   |  X  |  X  |  X  |  X  |   	| $48/y
-1Password	 	   |     |  	 |     |     |     |  X	  |  X	|  X  |  X  |  X  |     | $50
+1Password	 	   |     |  	 |     |     |  X  |  X	  |  X	|  X  |  X  |  X  |     | $50
 LastPass	 	   |	   |   	 |     |     |     |  X	  |  X	|  X  |  X  |  X  |  X	| $12/y
 
 ## What should I use?
