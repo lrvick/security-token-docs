@@ -1,3 +1,5 @@
+Migrated to https://github.com/hashbang/book
+
 ## Security Tokens
 
 Security tokens are small hardware devices one uses to prove physical access to a computer system in addition to traditional text credentials like a username or a password. The larger an organization gets, the higher the potential of a smartphone or a computer might be accessed by an unauthorized third party.
